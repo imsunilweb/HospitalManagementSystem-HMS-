@@ -87,12 +87,29 @@ namespace HospitalManagementSystem_HMS_.Controllers
             var result = await _signInManager.PasswordSignInAsync(user.UserName, model.Password, false, false);
             if (result.Succeeded)
             {
+                // ✅ Role-based redirection
+                var roles = await _userManager.GetRolesAsync(user);
+
+                if (roles.Contains("Admin"))
+                    return RedirectToAction("Index", "AdminDashboard");
+
+                else if (roles.Contains("Doctor"))
+                    return RedirectToAction("Index", "DoctorDashboard");
+
+                else if (roles.Contains("Patient"))
+                    return RedirectToAction("Index", "PatientDashboard");
+
+                else if (roles.Contains("Staff"))
+                    return RedirectToAction("Index", "StaffDashboard");
+
+                // Fallback
                 return RedirectToAction("Index", "Home");
             }
 
             ModelState.AddModelError("", "Invalid login attempt.");
             return View(model);
-         }
+        }
+
 
         // ✅ Logout (Allow both GET & POST)
         [HttpGet, HttpPost]
