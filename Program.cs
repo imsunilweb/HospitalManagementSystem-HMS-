@@ -1,36 +1,74 @@
-namespace HospitalManagementSystem_HMS_
+﻿using HospitalManagementSystem_HMS_.Data_Set;
+using HospitalManagementSystem_HMS_.IdentityModels;
+using HospitalManagementSystem_HMS_.JWTDTOs;
+using HospitalManagementSystem_HMS_.RoleInitialization;
+using HospitalManagementSystem_HMS_.Services;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
+using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
+using Microsoft.IdentityModel.Tokens;
+using System.Text;
+
+var builder = WebApplication.CreateBuilder(args);
+
+// ✅ Bind JwtSettings from appsettings.json
+builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
+
+builder.Services.AddControllersWithViews();
+builder.Services.AddScoped<IAuthService, AuthService>();
+
+builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
+    .AddEntityFrameworkStores<HospitalDbContext>()
+    .AddDefaultTokenProviders();
+
+builder.Services.AddDbContext<HospitalDbContext>(options =>
 {
-    public class Program
+    options.UseSqlServer(builder.Configuration.GetConnectionString("HospitalConnection"));
+});
+
+
+
+// ✅ Add JWT Authentication
+var jwtSettings = builder.Configuration.GetSection("JwtSettings").Get<JwtSettings>();
+var key = Encoding.UTF8.GetBytes(jwtSettings.Secret);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+    .AddJwtBearer(options =>
     {
-        public static void Main(string[] args)
+        options.TokenValidationParameters = new TokenValidationParameters
         {
-            var builder = WebApplication.CreateBuilder(args);
+            ValidateIssuerSigningKey = true,
+            IssuerSigningKey = new SymmetricSecurityKey(key),
+            ValidateIssuer = true,
+            ValidateAudience = true,
+            ValidIssuer = jwtSettings.Issuer,
+            ValidAudience = jwtSettings.Audience,
+            ValidateLifetime = true
+        };
+    });
 
-            // Add services to the container.
-            builder.Services.AddControllersWithViews();
+var app = builder.Build();
 
-            var app = builder.Build();
-
-            // Configure the HTTP request pipeline.
-            if (!app.Environment.IsDevelopment())
-            {
-                app.UseExceptionHandler("/Home/Error");
-                // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
-                app.UseHsts();
-            }
-
-            app.UseHttpsRedirection();
-            app.UseStaticFiles();
-
-            app.UseRouting();
-
-            app.UseAuthorization();
-
-            app.MapControllerRoute(
-                name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
-
-            app.Run();
-        }
-    }
+using (var scope = app.Services.CreateScope()) // ✅ Fir use karo
+{
+    var services = scope.ServiceProvider;
+    await RoleInitializer.InitializeRoles(services);
 }
+
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
+    await RoleInitializer.InitializeRoles(services);
+}
+
+app.UseHttpsRedirection();
+app.UseStaticFiles();
+app.UseRouting();
+app.UseAuthentication();
+app.UseAuthorization();
+
+app.MapControllerRoute(
+    name: "default",
+    pattern: "{controller=Account}/{action=Register}/{id?}");
+
+await app.RunAsync();
