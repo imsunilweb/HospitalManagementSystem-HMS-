@@ -18,5 +18,78 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    background-image: url('/img/background.jpg'); /* apna image path yahan daalein */
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
 }
+.my-btn{
+    text-align:center;
+    width:100%;
+}
+.logo img {
+    width: 140px;
+    height: 50px;
+    margin-left:100px;
+}
+.head-btn{
+    margin-right:100px;
+    text-align:center;
+   
+}
+.home-btn {
+    border: none;
+    border-radius: 5px;
+    margin-right: 10px;
+    background-color: orange;
+    width: 200px;
+}
+.privacy-btn {
+    border: none;
+    border-radius: 5px;
+    margin-left: 10px;
+    background-color: #2c4da3;
+    width: 200px;
+}
+.sticky-header {
+    position: sticky;
+    top: 0;
+    z-index: 1030; /* navbar ke upar rahe */
+    background-color: white;
+}
+.blur-card {
+    background: rgba(255, 255, 255, 0.2); /* thoda transparent white */
+    backdrop-filter: blur(10px); /* blur effect */
+    -webkit-backdrop-filter: blur(10px); /* Safari support */
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    color: #000;
+}
+.blur-card input,
+.blur-card select,
+.blur-card textarea {
+    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+    color: #000;
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 8px;
+    
+}
+
+.blur-card input::placeholder,
+.blur-card select option {
+/*    color: rgba(255, 255, 255, 0.8);  */
+    color:black;
+}
+
+.blur-card label {
+   color:black; /* Label color white */
+}
+
+
+/*.privacy-btn li a{
+    color:white;
+}*/
