@@ -58,7 +58,7 @@ body {
     border: none;
     border-radius: 5px;
     margin-right: 10px;
-    background-color: orange;
+    background-color: #2c4da3;
     width: 200px;
 }
 /*.home-btn:hover{
@@ -69,7 +69,8 @@ body {
     border: none;
     border-radius: 5px;
     margin-left: 10px;
-    background-color: #2c4da3;
+    margin-right: 20px;
+    background-color: orange;
     width: 200px;
 }
 /*.privacy-btn:hover {
