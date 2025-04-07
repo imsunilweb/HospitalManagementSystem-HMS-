@@ -8,6 +8,8 @@ html {
   }
 }
 
+
+
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
   box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
@@ -25,14 +27,27 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
 }
-.my-btn{
-    text-align:center;
-    width:100%;
+.register-btn {
+    text-align: center;
+    width: 100%;
+    background-color: #2c4da3;
+    border:none;
+    border-radius: 20px;
+    margin-top:20px;
+}
+.register-btn:hover{
+    background-color: orange;
+    transition:0.5s ease;
+    color:#000;
+}
+.logo{
+    border:none;
+    border-radius:10px;
 }
 .logo img {
     width: 140px;
     height: 50px;
-    margin-left:100px;
+    margin-left: 100px;
 }
 .head-btn{
     margin-right:100px;
@@ -46,6 +61,10 @@ body {
     background-color: orange;
     width: 200px;
 }
+/*.home-btn:hover{
+    background-color:#2c4da3;
+    transition:0.5s ease;
+}*/
 .privacy-btn {
     border: none;
     border-radius: 5px;
@@ -53,18 +72,25 @@ body {
     background-color: #2c4da3;
     width: 200px;
 }
+/*.privacy-btn:hover {
+    background-color: orange;
+    transition: 0.5s ease;
+}*/
 .sticky-header {
     position: sticky;
     top: 0;
     z-index: 1030; /* navbar ke upar rahe */
-    background-color: white;
+    /*    background-color: white;*/
+    background: rgba(255, 255, 255, 0.2); /* thoda transparent white */
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
 .blur-card {
     background: rgba(255, 255, 255, 0.2); /* thoda transparent white */
     backdrop-filter: blur(10px); /* blur effect */
     -webkit-backdrop-filter: blur(10px); /* Safari support */
     border: 1px solid rgba(255, 255, 255, 0.3);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 2);
     color: #000;
 }
 .blur-card input,
@@ -89,6 +115,35 @@ body {
    color:black; /* Label color white */
 }
 
+.my-footer a{
+    text-decoration: none;
+    color: #2c4da3;
+}
+.my-footer {
+    background-color: white;
+    background: rgba(255, 255, 255, 0.2); /* thoda transparent white */
+    backdrop-filter: blur(10px); /* blur effect */
+    border: none;
+}
+.login-btn a {
+    text-decoration: none;
+    color: #2c4da3;
+}
+.login-btn-login {
+    text-align: center;
+    width: 70%;
+    background-color: #2c4da3;
+    border: none;
+    border-radius: 20px;
+    margin-top: 20px;
+    margin:0 10px 0 10px ;
+}
+.login-btn-login:hover{
+    background-color: orange;
+    transition:0.5s ease;
+    color:#000;
+
+}
 
 /*.privacy-btn li a{
     color:white;

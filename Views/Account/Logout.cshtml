@@ -1,4 +1,11 @@
-﻿@if (User.Identity.IsAuthenticated)
+﻿
+@{
+    ViewData["Title"] = "Logout";
+}
+
+<h1>Logout</h1>
+
+@if (User.Identity.IsAuthenticated)
 {
     <form asp-action="Logout" asp-controller="Account" method="post">
         <button type="submit" class="btn btn-danger">Logout</button>
@@ -8,3 +15,4 @@ else
 {
     <a asp-action="Login" asp-controller="Account" class="btn btn-primary">Login</a>
 }
+

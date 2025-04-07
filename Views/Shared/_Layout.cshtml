@@ -8,47 +8,57 @@
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/HospitalManagementSystem_HMS_.styles.css" asp-append-version="true" />
 </head>
-<body>
+
+<!-- ✅ Flexbox applied here -->
+<body class="d-flex flex-column min-vh-100">
     <header class="sticky-header">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3 ">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow ">
             <div class="container-fluid">
                 <a class="navbar-brand logo" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/img/images.jpeg" alt="HospitalManagementSystem_HMS_" />
+                    <img src="~/img/images-removebg-preview.png" alt="HospitalManagementSystem_HMS_" />
                 </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex ">
-                    <ul class="navbar-nav head-btn flex-grow-1 justify-content-end">
+                <div class="navbar-collapse collapse d-sm-inline-flex">
+                    <ul class="navbar-nav head-btn flex-grow-1 justify-content-evenly">
                         <li class="nav-item home-btn">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                         </li>
                         <li class="nav-item privacy-btn">
-                            <a class="nav-link text-light " asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        </li>
+                        <li class="nav-item home-btn">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                        </li>
+                        <li class="nav-item privacy-btn">
+                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
                         </li>
                     </ul>
                 </div>
             </div>
         </nav>
     </header>
-    @* <img src="img/background.jpg" alt="Alternate Text" /> *@
-    <div class="container">
-        <main role="main" class="pb-3">
 
+    <!-- ✅ Main content takes full space -->
+    <div class="container flex-grow-1">
+        <main role="main" class="pb-3 m-5">
             @RenderBody()
         </main>
     </div>
 
-    <footer class="border-top footer text-muted  bottom-0">
+    <!-- ✅ Footer always at bottom -->
+    <footer class="my-footer footer text-black mt-auto">
         <div class="container">
-            &copy; 2025 - HospitalManagementSystem_HMS_ - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+            &copy; 2025 - HospitalManagementSystem_HMS_ -
+            <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
     <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
-    
 </body>
 </html>
