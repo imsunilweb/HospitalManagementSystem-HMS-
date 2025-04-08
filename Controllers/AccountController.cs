@@ -31,7 +31,12 @@ namespace HospitalManagementSystem_HMS_.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDto model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Roles = new List<string> { "Admin", "Doctor", "Patient", "Staff" };
+                ViewBag.BloodGroups = new List<string> { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
+                return View(model);
+            }
 
             var user = new ApplicationUser
             {
@@ -59,6 +64,10 @@ namespace HospitalManagementSystem_HMS_.Controllers
             {
                 ModelState.AddModelError("", error.Description);
             }
+
+            ViewBag.Roles = new List<string> { "Admin", "Doctor", "Patient", "Staff" };
+            ViewBag.BloodGroups = new List<string> { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
+
             return View(model);
         }
 
