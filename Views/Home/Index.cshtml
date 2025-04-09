@@ -6,3 +6,222 @@
 @*     <h1 class="display-4">Welcome</h1> *@
 @*     <p>Learn about <a href="https://learn.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p> *@
 @* </div> *@
+
+@{
+    ViewBag.Title = "Hospital Management System";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<!-- Section 1: Hero -->
+@* <section class=" text-white text-center py-5 rounded-top" style="background:#2c4da3;"> *@
+@*     <div class="container"> *@
+@*         <h1 class="display-4">Welcome to Ganga Hospital</h1> *@
+@*         <p class="lead">Your Health is Our Priority</p> *@
+@*         <a href="#about" class="btn btn-light mt-3">Learn More</a> *@
+@*     </div> *@
+@* </section> *@
+@* <div id="carouselExampleIndicators" class="carousel slide" data-bs-ride="carousel"> *@
+@*     <div class="carousel-indicators"> *@
+@*         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button> *@
+@*         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button> *@
+@*         <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button> *@
+@*     </div> *@
+@* </div> *@
+
+<section class="hero-section">
+    <div id="carouselExampleIndicators" class="carousel slide " data-bs-ride="carousel" data-bs-interval="2000" data-bs-pause="false">
+        <div class="carousel-indicators">
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
+            <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        </div>
+        <div class="carousel-inner">
+            <div class="carousel-item active">
+                <img src="~/img/slider1.jpg" class="d-block w-100" alt="Slide 1">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/slider2.jpg" class="d-block w-100" alt="Slide 2">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/slider3.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+            <div class="carousel-item">
+                <img src="~/img/slider4.jpg" class="d-block w-100" alt="Slide 3">
+            </div>
+        </div>
+        <button class="carousel-control-prev" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="prev">
+            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Previous</span>
+        </button>
+        <button class="carousel-control-next" type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide="next">
+            <span class="carousel-control-next-icon" aria-hidden="true"></span>
+            <span class="visually-hidden">Next</span>
+        </button>
+    </div>
+
+    <div class="hero-content">
+        <h1>Welcome to Ganga Hospital</h1>
+        <p class="lead">Compassion. Excellence. Trust.</p>
+    </div>
+</section>
+
+<!-- Section 2: About Hospital -->
+<section id="about" class="py-5 blur-card rounded-bottom">
+    <div class="container p-5 ">
+        <h2 class="text-center">About Us</h2>
+        <p style="text-align: justify; line-height: 1.8;">
+            LifeCare Hospital, established in 2010, is a state-of-the-art multi-specialty medical facility located in the heart of Ghazipur. Over the years, we have grown from a modest 20-bed hospital to a 300-bed institution that delivers exceptional healthcare services to thousands of patients each month. Our mission is to provide comprehensive, accessible, and compassionate healthcare for individuals and families in our community.
+        </p>
+        <p style="text-align: justify; line-height: 1.8;">
+            At LifeCare, we believe that health is a fundamental right. With this philosophy, we have assembled a team of highly qualified doctors, nurses, and support staff who are committed to excellence in every aspect of patient care. Our specialists span across various departments including Cardiology, Neurology, Orthopedics, Pediatrics, General Surgery, Obstetrics & Gynecology, and many more. Every department is equipped with cutting-edge technology, ensuring accurate diagnosis and effective treatment.
+        </p>
+        <p style="text-align: justify; line-height: 1.8;">
+            One of the defining aspects of LifeCare Hospital is our focus on innovation and technology. Our hospital boasts of an advanced ICU, fully computerized medical records, digital X-ray machines, 4D ultrasound, and robotic surgery systems. We also offer telemedicine consultations to connect with patients in remote areas, especially rural villages around Ghazipur, making quality healthcare accessible even at a distance.
+        </p>
+        <p style="text-align: justify; line-height: 1.8;">
+            Apart from treatment, we emphasize preventive healthcare. Our regular health camps, vaccination drives, awareness programs on diabetes, hypertension, women's health, and mental wellness have positively impacted thousands of lives. We believe in empowering our patients with knowledge, so they can make informed choices about their health and well-being.
+        </p>
+        <p style="text-align: justify; line-height: 1.8;">
+            LifeCare Hospital is also a training ground for the next generation of medical professionals. Our tie-ups with leading medical colleges and paramedical institutes help students gain hands-on experience in real clinical environments. We also host Continuing Medical Education (CME) programs to keep our staff updated with the latest in medical science.
+        </p>
+        <p style="text-align: justify; line-height: 1.8;">
+            Over the years, we have received several awards for excellence in healthcare services, patient satisfaction, and emergency care. But our true reward lies in the trust and smiles of our patients. At LifeCare Hospital, we don’t just treat illnesses – we care for lives.
+        </p>
+        <p style="text-align: justify; line-height: 1.8;">
+            Whether you are visiting us for a routine check-up, a complex surgery, or simply seeking advice, you can rest assured that you are in safe hands. LifeCare Hospital continues to evolve with the changing landscape of medicine, but one thing remains constant – our commitment to healing with compassion.
+        </p>
+    </div>
+</section>
+
+<!-- Section 3: Our Services -->
+<section id="services" class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Services</h2>
+        <div class="row text-center">
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <img height="50px" width="200px" src="~/img/emergency.jpg" alt="Alternate Text" />
+                        <div class="card-img-overlay-content">
+                            <h5 class="card-title">Emergency</h5>
+                            <p class="card-text">24x7 emergency services with ambulance support.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <img height="50px" width="200px" src="~/img/surgery.jpg" alt="Alternate Text" />
+                        <div class="card-img-overlay-content">
+                            <h5 class="card-title">Surgery</h5>
+                            <p class="card-text">Advanced operation theatres and surgical experts.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm custom-card">
+                    <div class="card-body">
+                        <img height="50px" width="200px" src="~/img/dignostic.jpg" alt="Diagnostics Image" />
+                        <div class="card-img-overlay-content">
+                            <h5 class="card-title">Diagnostics</h5>
+                            <p class="card-text">High-end lab testing and radiology services.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-4">
+                <div class="card shadow-sm h-100">
+                    <div class="card-body">
+                        <img height="50px" width="200px" src="~/img/pharmacy.jpg" alt="Alternate Text" />
+                       <div class="card-img-overlay-content">
+                            <h5 class="card-title">Pharmacy</h5>
+                            <p class="card-text">In-house pharmacy open round the clock.</p>
+                       </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 4: Highlights -->
+<section class="py-5 blur-card rounded-3">
+    <div class="container">
+        <h2 class="text-center mb-4">Why Choose Us</h2>
+        <div class="row text-center">
+            <div class="col-md-3">
+                <i class="bi bi-hospital fs-1 text-primary"></i>
+                <h5 class="mt-2">Modern Infrastructure</h5>
+            </div>
+            <div class="col-md-3">
+                <i class="bi bi-heart-pulse fs-1 text-danger"></i>
+                <h5 class="mt-2">Expert Doctors</h5>
+            </div>
+            <div class="col-md-3">
+                <i class="bi bi-shield-plus fs-1 text-success"></i>
+                <h5 class="mt-2">Quality Care</h5>
+            </div>
+            <div class="col-md-3">
+                <i class="bi bi-clock-history fs-1 text-warning"></i>
+                <h5 class="mt-2">24x7 Service</h5>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 5: Our Doctors -->
+<section class="py-5">
+    <div class="container">
+        <h2 class="text-center mb-4">Our Doctors</h2>
+        <div class="row text-center">
+            <div class="col-md-3 mb-3">
+                <div class="card shadow-lg">
+                    <img height="400px" width="400px" src="~/img/Indian-doctor-1.jpg" class="card-img-top" alt="Doctor 1" />
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. A. Sharma</h5>
+                        <p class="card-text">Cardiologist</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card shadow-lg doc-card">
+                    <img height="400px" width="400px" src="~/img/doctor-2.jpeg" class="card-img-top img" alt="Doctor 2" />
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. S. Verma</h5>
+                        <p class="card-text">Neurologist</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card shadow-lg">
+                    <img height="400px" width="400px" src="~/img/doctor-3.jpg" class="card-img-top" alt="Doctor 3" />
+                    <div class="card-body">
+                        <h5 class="card-title">Dr. R. Khan</h5>
+                        <p class="card-text">Orthopedic</p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-3 mb-3">
+                <div class="card shadow-lg">
+                    <img height="400px" width="400px" src="~/img/doctor-4c-removebg-preview.png" class="card-img-top" alt="Doctor 4" />
+                    <div class="card-body doc-card-body">
+                        <h5 class="card-title">Dr. P. Singh</h5>
+                        <p class="card-text">Pediatrician</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Section 6: Contact Us -->
+<section style="background-color:orange;" class="py-5  text-white text-center">
+    <div class="container">
+        <h2>Contact Us</h2>
+        <p>Address: Dullahapur, Ghazipur, UP</p>
+        <p>Phone: +91 9026945023 | Email: ashu893183@gmail.com</p>
+    </div>
+</section>

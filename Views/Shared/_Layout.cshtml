@@ -12,28 +12,44 @@
 <!-- ✅ Flexbox applied here -->
 <body class="d-flex flex-column min-vh-100">
     <header class="sticky-header">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow ">
-            <div class="container-fluid">
-                <a class="navbar-brand logo" asp-area="" asp-controller="Home" asp-action="Index">
-                    <img src="~/img/images-removebg-preview.png" alt="HospitalManagementSystem_HMS_" />
-                </a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
-                        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex">
-                    <ul class="navbar-nav head-btn flex-grow-1 justify-content-end">
-                        <li class="nav-item home-btn">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
-                        </li>
-                        <li class="nav-item privacy-btn">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
-                        </li>
-                        <li class="nav-item home-btn">
-                            <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
-                        </li>
-                    </ul>
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow h-auto">
+            <div class="container-fluid d-flex flex-column justify-content-start align-items-end">
+
+                <!-- Logo and toggler left aligned, nav items right -->
+                <div class="w-100 d-flex justify-content-between align-items-center">
+                    <a class="navbar-brand logo" asp-area="" asp-controller="Home" asp-action="Index">
+                        <img src="~/img/images-removebg-preview.png" alt="HospitalManagementSystem_HMS_" />
+                    </a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
+                            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="navbar-collapse collapse d-sm-inline-flex w-100 justify-content-end">
+                        <ul class="navbar-nav head-btn">
+                            <li class="nav-item home-btn">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item privacy-btn">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Account" asp-action="Login">Login</a>
+                            </li>
+                            <li class="nav-item home-btn">
+                                <a class="nav-link text-light" asp-area="" asp-controller="Account" asp-action="Register">Register</a>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
+                <!-- 👇 Search + Toll-Free aligned to RIGHT -->
+                <div class="mt-2 text-end search-btn d-inline-flex w-100 justify-content-end">
+                    <div class=" mt-1 text-nowrap " style="margin-right:20px;">
+                        <strong>Toll Free:</strong> 1800-123-4567
+                    </div>
+                    <div class="input-group  align-items-center" style="max-width: 420px; margin-right:110px;">
+                        <input type="text" class="form-control " placeholder="Enter a city Name...." aria-label="Search">
+                        <button class="btn btn-outline-secondary " type="button">Search</button>
+                    </div>
+                </div>
+
+
             </div>
         </nav>
     </header>

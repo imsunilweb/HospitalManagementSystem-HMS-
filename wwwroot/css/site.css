@@ -1,22 +1,22 @@
 html {
-  font-size: 14px;
+    font-size: 14px;
 }
 
 @media (min-width: 768px) {
-  html {
-    font-size: 16px;
-  }
+    html {
+        font-size: 16px;
+    }
 }
 
 
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
-  box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
+    box-shadow: 0 0 0 0.1rem white, 0 0 0 0.25rem #258cfb;
 }
 
 html {
-  position: relative;
-  min-height: 100%;
+    position: relative;
+    min-height: 100%;
 }
 
 body {
@@ -27,33 +27,38 @@ body {
     background-attachment: fixed;
     min-height: 100vh;
 }
+
 .register-btn {
     text-align: center;
     width: 100%;
     background-color: #2c4da3;
-    border:none;
+    border: none;
     border-radius: 20px;
-    margin-top:20px;
+    margin-top: 20px;
 }
-.register-btn:hover{
-    background-color: orange;
-    transition:0.5s ease;
-    color:#000;
+
+    .register-btn:hover {
+        background-color: orange;
+        transition: 0.5s ease;
+        color: #000;
+    }
+
+.logo {
+    border: none;
+    border-radius: 10px;
 }
-.logo{
-    border:none;
-    border-radius:10px;
+
+    .logo img {
+        width: 140px;
+        height: 50px;
+        margin-left: 100px;
+    }
+
+.head-btn {
+    margin-right: 100px;
+    text-align: center;
 }
-.logo img {
-    width: 140px;
-    height: 50px;
-    margin-left: 100px;
-}
-.head-btn{
-    margin-right:100px;
-    text-align:center;
-   
-}
+
 .home-btn {
     border: none;
     border-radius: 5px;
@@ -86,6 +91,7 @@ body {
     backdrop-filter: blur(10px);
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
 }
+
 .blur-card {
     background: rgba(255, 255, 255, 0.2); /* thoda transparent white */
     backdrop-filter: blur(10px); /* blur effect */
@@ -94,42 +100,45 @@ body {
     box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 2);
     color: #000;
 }
-.blur-card input,
-.blur-card select,
-.blur-card textarea {
-    background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
-    border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
-    color: #000;
-    backdrop-filter: blur(8px);
-    -webkit-backdrop-filter: blur(8px);
-    border-radius: 8px;
-    
-}
 
-.blur-card input::placeholder,
-.blur-card select option {
-/*    color: rgba(255, 255, 255, 0.8);  */
-    color:black;
-}
+    .blur-card input,
+    .blur-card select,
+    .blur-card textarea {
+        background-color: rgba(255, 255, 255, 0.2); /* Transparent background */
+        border: 1px solid rgba(255, 255, 255, 0.3); /* Light border */
+        color: #000;
+        backdrop-filter: blur(8px);
+        -webkit-backdrop-filter: blur(8px);
+        border-radius: 8px;
+    }
 
-.blur-card label {
-   color:black; /* Label color white */
-}
+        .blur-card input::placeholder,
+        .blur-card select option {
+            /*    color: rgba(255, 255, 255, 0.8);  */
+            color: black;
+        }
 
-.my-footer a{
+    .blur-card label {
+        color: black; /* Label color white */
+    }
+
+.my-footer a {
     text-decoration: none;
     color: #2c4da3;
 }
+
 .my-footer {
     background-color: white;
     background: rgba(255, 255, 255, 0.2); /* thoda transparent white */
     backdrop-filter: blur(10px); /* blur effect */
     border: none;
 }
+
 .login-btn a {
     text-decoration: none;
     color: #2c4da3;
 }
+
 .login-btn-login {
     text-align: center;
     width: 70%;
@@ -137,15 +146,67 @@ body {
     border: none;
     border-radius: 20px;
     margin-top: 20px;
-    margin:0 10px 0 10px ;
-}
-.login-btn-login:hover{
-    background-color: orange;
-    transition:0.5s ease;
-    color:#000;
-
+    margin: 0 10px 0 10px;
 }
 
-/*.privacy-btn li a{
-    color:white;
+    .login-btn-login:hover {
+        background-color: orange;
+        transition: 0.5s ease;
+        color: #000;
+    }
+
+/*img{
+    height:400px;
+    width:400px;
 }*/
+/*.blur-card-body {
+    background: rgba(255, 255, 255, 0.2);*/ /* transparent white */
+/*backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);*/ /* Safari support */
+/*border-bottom-left-radius: 0.5rem;
+    border-bottom-right-radius: 0.5rem;
+    padding: 1rem;
+    color: #000;
+}*/
+
+/* Optional: dark text if background image is dark */
+.card-title, .card-text {
+    font-weight: bold;
+}
+
+.hero-section {
+    position: relative;
+    height: 100vh;
+    width: 100%;
+    overflow: hidden;
+}
+
+.carousel-item img {
+    height: 100vh;
+    width: 100%;
+    object-fit: cover;
+    filter: brightness(0.6); /* darken for text visibility */
+}
+
+.hero-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    z-index: 10;
+}
+
+    .hero-content h1 {
+        font-size: 3rem;
+        font-weight: bold;
+        text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
+    }
+
+.search-btn{
+    justify-content:center;
+    width:100px;
+}
+
+
