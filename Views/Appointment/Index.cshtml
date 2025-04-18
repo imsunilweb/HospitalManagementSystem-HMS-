@@ -1,0 +1,35 @@
+﻿@model IEnumerable<HospitalManagementSystem_HMS_.DTOs.AppointmentDto>
+
+@{
+    ViewData["Title"] = "Appointment List";
+}
+
+<h2>All Appointments</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">+ New Appointment</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>Appointment_ID</th>
+            <th>Patient</th>
+            <th>Doctor</th>
+            <th>Date</th>
+            <th>Time</th>
+            <th>Status</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>@item.Appointment_ID</td>
+                <td>@item.Patient_ID</td>
+                <td>@item.Doctor_ID</td>
+                <td>@item.AppointmentDate.ToShortDateString()</td>
+                <td>@item.AppointmentTime</td>
+                <td>@item.Status</td>
+            </tr>
+        }
+    </tbody>
+</table>

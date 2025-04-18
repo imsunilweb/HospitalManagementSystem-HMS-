@@ -1,0 +1,50 @@
+﻿@model IEnumerable<HospitalManagementSystem_HMS_.DTOs.PatientDto>
+
+@{
+    ViewData["Title"] = "Patients List";
+}
+
+<h2>Patients</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">+ Add New Patient</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>Patient ID</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Blood Group</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Address</th>
+            <th>Health Scheme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var patient in Model)
+            {
+                <tr>
+                    <td>@patient.Patient_ID</td>
+                    <td>@patient.Name</td>
+                    <td>@patient.DOB.ToString("yyyy-MM-dd")</td>
+                    <td>@patient.Gender</td>
+                    <td>@patient.BloodGroup</td>
+                    <td>@patient.EmailID</td>
+                    <td>@patient.MobileNo</td>
+                    <td>@patient.Address</td>
+                    <td>@patient.HealthScheme</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="9" class="text-center">No patients found.</td>
+            </tr>
+        }
+    </tbody>
+</table>

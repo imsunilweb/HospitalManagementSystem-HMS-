@@ -11,7 +11,9 @@ namespace HospitalManagementSystem_HMS_.DTOs
         [Required(ErrorMessage = "Date of Birth is required")]
         public DateOnly DOB { get; set; }
         [Required(ErrorMessage ="Gender is required")]
-        [RegularExpression("^(?i:male|female|other)$\r\n",ErrorMessage ="Please enter the valid gender")]
+        
+        [RegularExpression("^(?i:male|female|other)$", ErrorMessage = "Please enter the valid gender")]
+
         public string Gender { get; set; }
         [EmailAddress, Required(ErrorMessage = "Email is required")]
         public string Email { get; set; }

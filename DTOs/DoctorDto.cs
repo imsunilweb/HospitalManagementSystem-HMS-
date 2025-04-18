@@ -1,4 +1,4 @@
-﻿using HospitalManagementSystem_HMS_.Models;
+﻿ using HospitalManagementSystem_HMS_.Models;
 using System.ComponentModel.DataAnnotations;
 
 namespace HospitalManagementSystem_HMS_.DTOs
@@ -11,7 +11,7 @@ namespace HospitalManagementSystem_HMS_.DTOs
         [Required(ErrorMessage = "Age is required")]
         public int Age { get; set; }
         [Required(ErrorMessage = "Gender is required")]
-        [RegularExpression("^(?i:male|female|other)$\r\n", ErrorMessage = "Please enter the valid gender")]
+        [RegularExpression("^(?i:male|female|other)$", ErrorMessage = "Please enter the valid gender")]
         public string Gender { get; set; }
         [Required(ErrorMessage = "Specialization is required")]
         public string Specialization { get; set; }

@@ -91,22 +91,22 @@ namespace HospitalManagementSystem_HMS_.Controllers
                 var roles = await _userManager.GetRolesAsync(user);
 
                 if (roles.Contains("Admin"))
-                    return RedirectToAction("Index", "AdminDashboard");
+                    return RedirectToAction("Index", "Admin");
 
                 else if (roles.Contains("Doctor"))
-                    return RedirectToAction("Index", "DoctorDashboard");
+                    return RedirectToAction("Index", "Doctor");
 
                 else if (roles.Contains("Patient"))
-                    return RedirectToAction("Index", "PatientDashboard");
+                    return RedirectToAction("Index", "Patient");
 
-                else if (roles.Contains("Staff"))
-                    return RedirectToAction("Index", "StaffDashboard");
+                else if (roles.Contains("Staff"))  
+                    return RedirectToAction("Index", "Staff");
 
                 // Fallback
                 return RedirectToAction("Index", "Home");
             }
 
-            ModelState.AddModelError("", "Invalid login attempt.");
+            ModelState.AddModelError("", "Invalid login attempt."); 
             return View(model);
         }
 

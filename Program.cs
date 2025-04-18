@@ -3,6 +3,8 @@ using HospitalManagementSystem_HMS_.IdentityModels;
 using HospitalManagementSystem_HMS_.JWTDTOs;
 using HospitalManagementSystem_HMS_.RoleInitialization;
 using HospitalManagementSystem_HMS_.Services;
+using HospitalManagementSystem_HMS_.Services.AllDoctor;
+using HospitalManagementSystem_HMS_.Services.AllPatients;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
@@ -11,11 +13,18 @@ using System.Text;
 
 var builder = WebApplication.CreateBuilder(args);
 
+// 👇 AutoMapper service registration
+builder.Services.AddAutoMapper(typeof(Program)); // or typeof(AdminProfile).Assembly
+
 // ✅ Bind JwtSettings from appsettings.json
 builder.Services.Configure<JwtSettings>(builder.Configuration.GetSection("JwtSettings"));
 
 builder.Services.AddControllersWithViews();
 builder.Services.AddScoped<IAuthService, AuthService>();
+builder.Services.AddScoped<IAdminService, AdminService>();
+builder.Services.AddScoped<IAppointmentService, AppointmentService>();
+builder.Services.AddScoped<IPatientService,PatientService>();
+builder.Services.AddScoped<IDoctorService, DoctorService>();
 
 builder.Services.AddIdentity<ApplicationUser, IdentityRole>()
     .AddEntityFrameworkStores<HospitalDbContext>()

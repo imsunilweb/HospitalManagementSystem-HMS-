@@ -1,0 +1,66 @@
+﻿@model HospitalManagementSystem_HMS_.DTOs.DoctorDto
+
+@{
+    ViewData["Title"] = ViewContext.RouteData.Values["action"] + " Doctor";
+}
+
+<h2>@ViewData["Title"]</h2>
+ 
+<form asp-action="@ViewContext.RouteData.Values["action"]" method="post">
+    <div class="form-group">
+        <label asp-for="Doctor_ID"></label>
+        <input asp-for="Doctor_ID" class="form-control" />
+        <span asp-validation-for="Doctor_ID" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <input asp-for="Gender" class="form-control" />
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Specialization"></label>
+        <input asp-for="Specialization" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Experience"></label>
+        <input asp-for="Experience" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Language"></label>
+        <input asp-for="Language" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MobileNo"></label>
+        <input asp-for="MobileNo" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmailID"></label>
+        <input asp-for="EmailID" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Schedule"></label>
+        <input asp-for="Schedule" class="form-control" />
+    </div>
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

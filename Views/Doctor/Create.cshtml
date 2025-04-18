@@ -1,0 +1,101 @@
+﻿@model HospitalManagementSystem_HMS_.DTOs.DoctorDto
+
+@{
+    ViewData["Title"] = ViewContext.RouteData.Values["action"] + " Doctor";
+}
+
+<h2>@ViewData["Title"]</h2>
+
+<form asp-action="@ViewContext.RouteData.Values["action"]" method="post">
+    <div class="form-group">
+        <label asp-for="Name"></label>
+        <input asp-for="Name" class="form-control" />
+        <span asp-validation-for="Name" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Age"></label>
+        <input asp-for="Age" class="form-control" />
+        <span asp-validation-for="Age" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <input asp-for="Gender" class="form-control" />
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Specialization"></label>
+        <input asp-for="Specialization" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Experience"></label>
+        <input asp-for="Experience" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Language"></label>
+        <input asp-for="Language" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="MobileNo"></label>
+        <input asp-for="MobileNo" class="form-control" />
+    </div>
+
+    <div class="form-group">
+        <label asp-for="EmailID"></label>
+        <input asp-for="EmailID" class="form-control" />
+    </div>
+
+
+    <div class="form-group">
+        <label asp-for="Schedule"></label>
+        <select asp-for="Schedule" class="form-control">
+            <option value="">-- Select Schedule --</option>
+            <option value="08:00:00">08:00 AM</option>
+            <option value="09:00:00">09:00 AM</option>
+            <option value="10:30:00">10:30 AM</option>
+            <option value="14:00:00">02:00 PM</option>
+            <option value="16:00:00">04:00 PM</option>
+        </select>
+        <span asp-validation-for="Schedule" class="text-danger"></span>
+    </div>
+
+
+
+   @*  <div class="form-group">
+        <label for="StartTime">Available From</label>
+        <select name="StartTime" class="form-control">
+            <option value="">-- Start Time --</option>
+            <option value="08:00:00">08:00 AM</option>
+            <option value="08:30:00">08:30 AM</option>
+            <option value="09:00:00">09:00 AM</option>
+            <!-- add more as needed -->
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label for="EndTime">Available Till</label>
+        <select name="EndTime" class="form-control">
+            <option value="">-- End Time --</option>
+            <option value="12:00:00">12:00 PM</option>
+            <option value="13:00:00">01:00 PM</option>
+            <option value="14:00:00">02:00 PM</option>
+            <!-- add more as needed -->
+        </select>
+    </div> *@
+
+
+
+    <button type="submit" class="btn btn-success">Save</button>
+    <a asp-action="Index" class="btn btn-secondary">Cancel</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

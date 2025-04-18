@@ -1,0 +1,46 @@
+﻿@model IEnumerable<HospitalManagementSystem_HMS_.DTOs.AdminDto>
+
+@{
+    ViewData["Title"] = "Admin List";
+}
+
+<h2>Admin List</h2>
+
+<a class="btn btn-primary mb-3" asp-action="Create">+ Add New Admin</a>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>ID</th>
+            <th>Admin Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Address</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null && Model.Any())
+        {
+            foreach (var admin in Model)
+            {
+                <tr>
+                    <td>@admin.Admin_ID</td>
+                    <td>@admin.AdminName</td>
+                    <td>@admin.DOB.ToString("yyyy-MM-dd")</td>
+                    <td>@admin.Gender</td>
+                    <td>@admin.Email</td>
+                    <td>@admin.MobileNo</td>
+                    <td>@admin.Address</td>
+                </tr>
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="7" class="text-center">No admins found.</td>
+            </tr>
+        }
+    </tbody>
+</table>

@@ -1,0 +1,49 @@
+﻿@model IEnumerable<HospitalManagementSystem_HMS_.DTOs.DoctorDto>
+
+@{
+    ViewData["Title"] = "Doctor List";
+}
+
+<h2>All Doctors</h2>
+
+<a asp-action="Create" class="btn btn-primary mb-3">+ Add New Doctor</a>
+
+<table class="table table-bordered table-striped">
+    <thead class="thead-dark">
+        <tr>
+            <th>D_ID</th>
+            <th>Doctor Name</th>
+            <th>Age</th>
+            <th>Gender</th>
+            <th>Specialization</th>
+            <th>Experience</th>
+            <th>Language</th>
+            <th>Mobile</th>
+            <th>Email</th>
+            <th>Schedule</th>
+            <th>Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var doc in Model)
+        {
+            <tr>
+                <td>@doc.Doctor_ID</td>
+                <td>@doc.Name</td>
+                <td>@doc.Age</td>
+                <td>@doc.Gender</td>
+                <td>@doc.Specialization</td>
+                <td>@doc.Experience</td>
+                <td>@doc.Language</td>
+                <td>@doc.MobileNo</td>
+                <td>@doc.EmailID</td>
+                <td>@doc.Schedule</td>
+                <td>
+                    <a asp-action="Edit" asp-route-id="@doc.Doctor_ID" class="btn btn-sm btn-warning">Edit</a>
+                    <a asp-action="Delete" asp-route-id="@doc.Doctor_ID" class="btn btn-sm btn-danger">Delete</a>
+                    <a asp-action="Patients" asp-route-id="@doc.Doctor_ID" class="btn btn-sm btn-info">Patients</a>
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

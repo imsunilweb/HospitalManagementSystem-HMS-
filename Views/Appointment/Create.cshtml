@@ -1,0 +1,52 @@
+﻿@model HospitalManagementSystem_HMS_.DTOs.AppointmentDto
+
+@{
+    ViewData["Title"] = "Create Appointment";
+}
+
+<h2>Create Appointment</h2>
+
+<form asp-action="Create" method="post">
+    <div class="form-group">
+        <label asp-for="Patient_ID" class="control-label">Patient</label>
+        <select asp-for="Patient_ID" class="form-control" asp-items="ViewBag.Patients">
+            <option value="">-- Select Patient --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Doctor_ID" class="control-label">Doctor</label>
+        <select asp-for="Doctor_ID" class="form-control" asp-items="ViewBag.Doctors">
+            <option value="">-- Select Doctor --</option>
+        </select>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppointmentDate" class="control-label">Date</label>
+        <input asp-for="AppointmentDate" class="form-control" type="date" />
+        <span asp-validation-for="AppointmentDate" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="AppointmentTime" class="control-label">Time</label>
+        <input asp-for="AppointmentTime" class="form-control" placeholder="e.g. 10:30 AM" />
+        <span asp-validation-for="AppointmentTime" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Status" class="control-label">Status</label>
+        <select asp-for="Status" class="form-control" asp-items="ViewBag.StatusList">
+            <option value="">-- Select Status --</option>
+        </select>
+        <span asp-validation-for="Status" class="text-danger"></span>
+    </div>
+
+    <button type="submit" class="btn btn-primary">Create</button>
+    <a asp-action="Index" class="btn btn-secondary">Back</a>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

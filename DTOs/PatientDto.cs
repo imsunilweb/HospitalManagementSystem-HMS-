@@ -5,15 +5,16 @@ namespace HospitalManagementSystem_HMS_.DTOs
 {
     public class PatientDto
     {
-        public string Patient_ID { get; set; }
+        public int Patient_ID { get; set; }
         [Required(ErrorMessage = "Name is required")]
         public string Name { get; set; }
         [Required(ErrorMessage = "Date of Birth is required")]
         public DateOnly DOB { get; set; }
         [Required(ErrorMessage = "Gender is required")]
-        [RegularExpression("^(?i:male|female|other)$\r\n", ErrorMessage = "Please enter the valid gender")]
+        [RegularExpression("^(?i:male|female|other)$", ErrorMessage = "Please enter the valid gender")]
         public string Gender { get; set; }
-        [Required(ErrorMessage = "Blood group is required")]
+        [Required(ErrorMessage = "Blood Group is required.")]
+        [RegularExpression("^(A|B|AB|O)[+-]$", ErrorMessage = "Invalid Blood Group format.")]
         public string BloodGroup { get; set; }
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
@@ -21,7 +22,7 @@ namespace HospitalManagementSystem_HMS_.DTOs
         [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
         [Required(ErrorMessage = "Mobile Number is required")]
-        public int MobileNo { get; set; }
+        public string MobileNo { get; set; }
          
         public HealthSchemeType HealthScheme { get; set; }  // ✅ Enum here too
 

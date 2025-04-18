@@ -1,0 +1,37 @@
+﻿@model List<HospitalManagementSystem_HMS_.DTOs.PatientDto>
+
+@{
+    ViewData["Title"] = "Patients for Doctor";
+}
+
+<h2>Patients under this Doctor</h2>
+
+<table class="table table-bordered table-striped">
+    <thead>
+        <tr>
+            <th>P_ID</th>
+            <th>Name</th>
+            <th>DOB</th>
+            <th>Gender</th>
+            <th>Email</th>
+            <th>Mobile</th>
+            <th>Health Scheme</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var p in Model)
+        {
+            <tr>
+                <td>@p.Patient_ID</td>
+                <td>@p.Name</td>
+                <td>@p.DOB</td>
+                <td>@p.Gender</td>
+                <td>@p.EmailID</td>
+                <td>@p.MobileNo</td>
+                <td>@p.HealthScheme</td>
+            </tr>
+        }
+    </tbody>
+</table>
+
+<a asp-action="Index" class="btn btn-secondary">Back to Doctors</a>
