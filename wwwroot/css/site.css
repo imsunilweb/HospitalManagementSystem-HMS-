@@ -210,3 +210,133 @@ body {
 }
 
 
+.card-img-top1 {
+    transition: transform 0.3s ease; /* Smooth transition for scale */
+    cursor:pointer;
+}
+
+.card-img-top1:hover {
+    transform: scale(1.1); /* Expand image when hovered */
+}
+
+.side-bar {
+    margin: 1rem;
+    height: 4rem;
+    width: 4rem;
+    display: flex;
+    border-radius: 50%;
+    border: none;
+    background-color:orange;
+}
+
+.side-p {
+    position: fixed;
+    display: inline-table;
+    top: 30%;
+    left: -40px;
+    height: 18rem;
+    margin-left: 50px;
+    padding: 20px;
+    justify-content: space-between;
+    flex-direction: column;
+    margin-left: 50px;
+    align-items: center;
+    gap: 1rem;
+    z-index: 1000;
+}
+
+.icon {
+    padding-left: 10px;
+}
+
+.side-book {
+    background-image: image-set("https://www.apollohospitals.com/sites/default/files/2025-02/Doctor_2.png" );
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0;
+}
+
+    .side-book:hover {
+        width: auto;
+        padding: 0 2rem 0 2rem;
+        border-radius: 50px;
+        background-image: none;
+        background-color: #2c4da3;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s all ease-in-out;
+        cursor: pointer;
+    }
+
+.side-find {
+    background-image: image-set("https://www.apollohospitals.com/sites/default/files/2025-01/hospitals.png" );
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0;
+}
+
+    .side-find:hover {
+        width: auto;
+        padding: 0 2rem 0 2rem;
+        border-radius: 50px;
+        background-image: none;
+        background-color: #2c4da3;
+        color: white;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s all ease-in-out;
+        cursor: pointer;
+    }
+
+.side-checkup {
+    background-image: image-set("https://www.apollohospitals.com/sites/default/files/2025-02/health-checkup--64x64-.png" );
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0;
+}
+
+    .side-checkup:hover {
+        width: auto;
+        padding: 0 2rem 0 2rem;
+        border-radius: 50px;
+        background-image: none;
+        background-color: #2c4da3;
+        color:white;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s all ease-in-out;
+        cursor: pointer;
+    }
+
+.side-expert {
+    background-image: image-set("https://www.apollohospitals.com/sites/default/files/2025-01/icon-dev-3.png" );
+    background-size: 40px 40px;
+    background-repeat: no-repeat;
+    background-position: center;
+    font-size: 0;
+}
+
+    .side-expert:hover {
+        width: auto;
+        padding: 0 2rem 0 2rem;
+        border-radius: 50px;
+        background-image: none;
+        background-color: #2c4da3;
+        color:white;
+        font-size: 20px;
+        text-align: center;
+        justify-content: center;
+        align-items: center;
+        transition: 0.3s all ease-in-out;
+        cursor: pointer;
+    }
