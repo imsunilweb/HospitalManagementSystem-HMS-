@@ -43,7 +43,7 @@ namespace HospitalManagementSystem_HMS_.Controllers
 
         [HttpPost]
         public async Task<IActionResult> Edit(DoctorDto dto)
-        {
+        { 
             if (!ModelState.IsValid) return View(dto);
 
             await _doctorService.UpdateDoctorAsync(dto);

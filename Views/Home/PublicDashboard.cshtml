@@ -1,0 +1,83 @@
+﻿@{
+    ViewData["Title"] = "Hospital Dashboard";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<div class="container mt-5">
+    <!-- Header -->
+    <div class="text-center bg-primary text-white p-5 rounded shadow">
+        <h1 class="display-5 fw-bold">Welcome to Our Hospital</h1>
+        <p class="lead">Delivering care with compassion and technology.</p>
+    </div>
+
+    <!-- Actions -->
+    <div class="row mt-5">
+        <div class="col-md-6 mb-4">
+            <div class="card p-3 shadow-sm">
+                <h4>📝 Register as a Patient</h4>
+                <p>If you're new, create your account and get started.</p>
+                <a href="/Account/Register" class="btn btn-outline-success">Register</a>
+            </div>
+        </div>
+        <div class="col-md-6 mb-4">
+            <div class="card p-3 shadow-sm">
+                <h4>📅 Book Appointment</h4>
+                <p>Select doctor, date and time for your visit.</p>
+                <a href="/Appointment/Book" class="btn btn-outline-primary">Book Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Departments -->
+    <div class="row mt-4">
+        <div class="col-md-4 mb-4">
+            <div class="card p-3 shadow-sm">
+                <h5>🏥 Departments</h5>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item">Cardiology</li>
+                    <li class="list-group-item">Orthopedics</li>
+                    <li class="list-group-item">Neurology</li>
+                    <li class="list-group-item">Pediatrics</li>
+                </ul>
+            </div>
+        </div>
+
+        <!-- Doctor Table -->
+        <div class="col-md-8 mb-4">
+            <div class="card p-3 shadow-sm">
+                <h5>👨‍⚕️ Available Doctors</h5>
+                <table class="table table-striped mt-3">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Specialization</th>
+                            <th>Availability</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Dr. Raj Sharma</td>
+                            <td>Cardiology</td>
+                            <td>Mon-Fri (10 AM - 2 PM)</td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Meena Verma</td>
+                            <td>Orthopedics</td>
+                            <td>Tue-Thu (11 AM - 1 PM)</td>
+                        </tr>
+                        <tr>
+                            <td>Dr. Sameer Khan</td>
+                            <td>Neurology</td>
+                            <td>Mon-Wed (9 AM - 12 PM)</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer class="text-center mt-5 text-muted">
+        <p>&copy; 2025 CityCare Hospital | Contact: 9876543210 | Email: info@citycare.com</p>
+    </footer>
+</div>

@@ -31,36 +31,57 @@ namespace HospitalManagementSystem_HMS_.Controllers
         [HttpPost]
         public async Task<IActionResult> Register(RegisterDto model)
         {
-            if (!ModelState.IsValid) return View(model);
+            if (!ModelState.IsValid)
+            {
+                ViewBag.Roles = new List<string> { "Admin", "Doctor", "Patient", "Staff" };
+                ViewBag.BloodGroups = new List<string> { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
+                return View(model);
+            }
+
+            // ✅ Automatically assign "Patient" role if user is not Admin
+            if (!User.IsInRole("Admin"))
+            {
+                model.Role = "Patient";
+            }
 
             var user = new ApplicationUser
             {
-                UserName = model.Email,  // Username ko Email set kar diya
+                UserName = model.Email,
                 Email = model.Email,
                 FullName = model.FullName,
                 BloodGroup = model.BloodGroup,
                 DOB = model.DOB,
                 Gender = model.Gender,
                 Address = model.Address,
-                HealthScheme = model.HealthScheme // ✅ Directly assign without Enum.TryParse
+                HealthScheme = model.HealthScheme
             };
 
             var result = await _userManager.CreateAsync(user, model.Password);
             if (result.Succeeded)
             {
-                // Yeh line role assign karti hai
                 await _userManager.AddToRoleAsync(user, model.Role);
 
-                await _signInManager.SignInAsync(user, isPersistent: false);
-                return RedirectToAction("Login", "Account");
+                // Auto login only if self-registering
+                if (!User.IsInRole("Admin"))
+                {
+                    await _signInManager.SignInAsync(user, isPersistent: false);
+                    return RedirectToAction("Login", "Account");
+                }
+
+                // Admin path
+                return RedirectToAction("UserList", "Admin");
             }
 
             foreach (var error in result.Errors)
             {
                 ModelState.AddModelError("", error.Description);
             }
+
+            ViewBag.Roles = new List<string> { "Admin", "Doctor", "Patient", "Staff" };
+            ViewBag.BloodGroups = new List<string> { "A+", "A-", "B+", "B-", "AB+", "AB-", "O+", "O-" };
             return View(model);
         }
+
 
         // ✅ Login View GET
         [HttpGet]

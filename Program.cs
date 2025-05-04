@@ -63,12 +63,12 @@ using (var scope = app.Services.CreateScope()) // ✅ Fir use karo
     var services = scope.ServiceProvider;
     await RoleInitializer.InitializeRoles(services);
 }
-
-using (var scope = app.Services.CreateScope())
-{
-    var services = scope.ServiceProvider;
-    await RoleInitializer.InitializeRoles(services);
-}
+ 
+//using (var scope = app.Services.CreateScope())
+//{
+//    var services = scope.ServiceProvider;
+//    await RoleInitializer.InitializeRoles(services);
+//}
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
@@ -78,6 +78,6 @@ app.UseAuthorization();
 
 app.MapControllerRoute(
     name: "default",
-    pattern: "{controller=Account}/{action=Register}/{id?}");
+    pattern: "{controller=Home}/{action=PublicDashboard}/{id?}");
 
 await app.RunAsync();

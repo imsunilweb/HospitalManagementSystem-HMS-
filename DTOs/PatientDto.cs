@@ -18,10 +18,12 @@ namespace HospitalManagementSystem_HMS_.DTOs
         public string BloodGroup { get; set; }
         [Required(ErrorMessage = "Email is required")]
         [EmailAddress(ErrorMessage = "Invalid Email Address")]
+
         public string EmailID { get; set; }
         [Required(ErrorMessage = "Address is required")]
         public string Address { get; set; }
-        [Required(ErrorMessage = "Mobile Number is required")]
+        [Required(ErrorMessage = "Mobile Number is required.")]
+        [Phone(ErrorMessage = "Invalid mobile number.")]
         public string MobileNo { get; set; }
          
         public HealthSchemeType HealthScheme { get; set; }  // ✅ Enum here too

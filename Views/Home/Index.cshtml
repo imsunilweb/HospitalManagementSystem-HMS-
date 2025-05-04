@@ -1,8 +1,43 @@
 ﻿@{
-    ViewData["Title"] = "Home Page";
+    ViewData["Title"] = "Home";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-  
+<!-- Hero Section -->
+<div class="container-fluid p-5 bg-primary text-white text-center">
+    <h1 class="display-4 fw-bold">Welcome to Hospital Management System</h1>
+    <p class="lead">Efficient, Easy & Secure Hospital Operations</p>
+</div>
+
+<!-- Login Selection Section -->
+<div class="container my-5">
+    <div class="row text-center">
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Patient</h4>
+                    <p class="card-text">Book appointments, view prescriptions, make payments.</p>
+                    <a href="@Url.Action("Login", "Account", new { role = "patient" })" class="btn btn-outline-primary">Patient Login</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Doctor</h4>
+                    <p class="card-text">Manage appointments, view patients, write prescriptions.</p>
+                    <a href="@Url.Action("Login", "Account", new { role = "doctor" })" class="btn btn-outline-success">Doctor Login</a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4 mb-4">
+            <div class="card shadow-sm h-100">
+                <div class="card-body">
+                    <h4 class="card-title">Admin</h4>
+                    <p class="card-text">Manage doctors, view records, verify payments.</p>
+                    <a href="@Url.Action("Login", "Account", new { role = "admin" })" class="btn btn-outline-danger">Admin Login</a>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>

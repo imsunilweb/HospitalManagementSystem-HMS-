@@ -2,133 +2,95 @@
 
 @{
     ViewData["Title"] = "Register";
-    Layout = "~/Views/Shared/_AccountLayout.cshtml";
 }
 
-<!-- Section: Design Block -->
-<section class="text-center">
-    <!-- Background image -->
-    <div class="p-5 bg-image" style="
-        background-image: url('https://mdbootstrap.com/img/new/textures/full/171.jpg');
-        height: 300px;
-        "></div>
+<h2>Register</h2>
 
-    <!-- Card -->
-    <div class="card mx-4 mx-md-5 shadow-5-strong bg-body-tertiary" style="margin-top: -100px; backdrop-filter: blur(30px);">
-        <div class="card-body py-5 px-md-5">
-            <div class="row d-flex justify-content-center">
-                <div class="col-lg-10">
-                    <h2 class="fw-bold mb-5">Sign up now</h2>
-
-                    <form asp-action="Register" method="post">
-                        @Html.ValidationSummary(true, "", new { @class = "text-danger" })
-
-                        <!-- Full Name -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="FullName" class="form-label"></label>
-                            <input asp-for="FullName" class="form-control" />
-                            <span asp-validation-for="FullName" class="text-danger"></span>
-                        </div>
-
-                        <!-- Email -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="Email" class="form-label"></label>
-                            <input asp-for="Email" class="form-control" />
-                            <span asp-validation-for="Email" class="text-danger"></span>
-                        </div>
-
-                        <!-- Password -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="Password" class="form-label"></label>
-                            <input asp-for="Password" type="password" class="form-control" />
-                            <span asp-validation-for="Password" class="text-danger"></span>
-                        </div>
-
-                        <!-- Confirm Password -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="ConfirmPassword" class="form-label"></label>
-                            <input asp-for="ConfirmPassword" type="password" class="form-control" />
-                            <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
-                        </div>
-
-                        <!-- Blood Group -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="BloodGroup" class="form-label"></label>
-                            <select asp-for="BloodGroup" class="form-control" asp-items="new SelectList(ViewBag.BloodGroups)">
-                                <option value="">-- Select Blood Group --</option>
-                            </select>
-                            <span asp-validation-for="BloodGroup" class="text-danger"></span>
-                        </div>
-
-                        <!-- DOB -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="DOB" class="form-label"></label>
-                            <input asp-for="DOB" type="date" class="form-control" />
-                            <span asp-validation-for="DOB" class="text-danger"></span>
-                        </div>
-
-                        <!-- Gender -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="Gender" class="form-label"></label>
-                            <select asp-for="Gender" class="form-control">
-                                <option value="">Select Gender</option>
-                                <option value="Male">Male</option>
-                                <option value="Female">Female</option>
-                            </select>
-                            <span asp-validation-for="Gender" class="text-danger"></span>
-                        </div>
-
-                        <!-- Role -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="Role" class="form-label"></label>
-                            <select asp-for="Role" class="form-control" asp-items="@(new SelectList(new[] { "Admin", "Doctor", "Patient", "Staff" }))">
-                                <option value="">-- Select Role --</option>
-                            </select>
-                            <span asp-validation-for="Role" class="text-danger"></span>
-                        </div>
-
-                        <!-- Address -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="Address" class="form-label"></label>
-                            <input asp-for="Address" class="form-control" />
-                            <span asp-validation-for="Address" class="text-danger"></span>
-                        </div>
-
-                        <!-- Health Scheme -->
-                        <div class="form-outline mb-4">
-                            <label asp-for="HealthScheme" class="form-label"></label>
-                            <select asp-for="HealthScheme" asp-items="Html.GetEnumSelectList<HospitalManagementSystem_HMS_.IdentityModels.HealthSchemeType>()" class="form-control">
-                                <option value="">Select Health Scheme</option>
-                            </select>
-                            <span asp-validation-for="HealthScheme" class="text-danger"></span>
-                        </div>
-
-                        <!-- Newsletter Checkbox -->
-                        <div class="form-check d-flex justify-content-center mb-4">
-                            <input class="form-check-input me-2" type="checkbox" value="" id="form2Example33" checked />
-                            <label class="form-check-label" for="form2Example33">
-                                Subscribe to our newsletter
-                            </label>
-                        </div>
-
-                        <!-- Submit Button -->
-                        <button type="submit" class="btn btn-primary btn-block mb-4">Sign up</button>
-
-                        <!-- Social buttons -->
-                        <div class="text-center">
-                            <p>or sign up with:</p>
-                            <button type="button" class="btn btn-link btn-floating mx-1"><i class="fab fa-facebook-f"></i></button>
-                            <button type="button" class="btn btn-link btn-floating mx-1"><i class="fab fa-google"></i></button>
-                            <button type="button" class="btn btn-link btn-floating mx-1"><i class="fab fa-twitter"></i></button>
-                            <button type="button" class="btn btn-link btn-floating mx-1"><i class="fab fa-github"></i></button>
-                        </div>
-
-                        <!-- Login redirect -->
-                        <p class="mt-3">Already have an account? <a asp-action="Login">Login here</a></p>
-                    </form>
-                </div>
-            </div>
-        </div>
+<form asp-action="Register" method="post">
+    <div class="form-group">
+        <label asp-for="FullName"></label>
+        <input asp-for="FullName" class="form-control" />
+        <span asp-validation-for="FullName" class="text-danger"></span>
     </div>
-</section>
-<!-- End Section -->
+
+    <div class="form-group">
+        <label asp-for="Email"></label>
+        <input asp-for="Email" class="form-control" />
+        <span asp-validation-for="Email" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Password"></label>
+        <input asp-for="Password" type="password" class="form-control" />
+        <span asp-validation-for="Password" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="ConfirmPassword"></label>
+        <input asp-for="ConfirmPassword" type="password" class="form-control" />
+        <span asp-validation-for="ConfirmPassword" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="DOB"></label>
+        <input asp-for="DOB" type="date" class="form-control" />
+        <span asp-validation-for="DOB" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Gender"></label>
+        <select asp-for="Gender" class="form-control">
+            <option value="">-- Select Gender --</option>
+            <option value="Male">Male</option>
+            <option value="Female">Female</option>
+            <option value="Other">Other</option>
+        </select>
+        <span asp-validation-for="Gender" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="BloodGroup"></label>
+        <select asp-for="BloodGroup" class="form-control" asp-items="@(new SelectList(ViewBag.BloodGroups))">
+            <option value="">-- Select Blood Group --</option>
+        </select>
+        <span asp-validation-for="BloodGroup" class="text-danger"></span>
+    </div>
+
+    <div class="form-group">
+        <label asp-for="Address"></label>
+        <input asp-for="Address" class="form-control" />
+        <span asp-validation-for="Address" class="text-danger"></span>
+    </div>
+
+    <div class="mb-3">
+        <label asp-for="HealthScheme" class="form-label"></label>
+        <select asp-for="HealthScheme" class="form-control"
+                asp-items="Html.GetEnumSelectList<HospitalManagementSystem_HMS_.IdentityModels.HealthSchemeType>()">
+            <option value="">Select Health Scheme</option>
+        </select>
+        <span asp-validation-for="HealthScheme" class="text-danger"></span>
+    </div>
+
+    @if (User.Identity.IsAuthenticated && User.IsInRole("Admin"))
+    {
+        <div class="form-group">
+            <label asp-for="Role"></label>
+            <select asp-for="Role" class="form-control" asp-items="@(new SelectList(ViewBag.Roles))">
+                <option value="">-- Select Role --</option>
+            </select>
+            <span asp-validation-for="Role" class="text-danger"></span>
+        </div>
+    }
+    else
+    {
+        <input type="hidden" asp-for="Role" value="Patient" />
+    }
+
+    <button type="submit" class="btn btn-primary">Register</button>
+</form>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}
