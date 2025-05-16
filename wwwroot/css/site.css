@@ -46,13 +46,26 @@ body {
 .logo {
     border: none;
     border-radius: 10px;
+    position:relative;
+    transition:all 0.3s;
 }
-
+header.sticky .logo {
+    position: absolute;
+}
     .logo img {
-        width: 140px;
-        height: 50px;
+        width: 190px;
+        height: 70px;
         margin-left: 100px;
+        position:relative;
+        top:10px;
+        transition:all 0.3s;
     }
+header.sticky .logo img {
+    width: 150px;
+    height: 50px;
+    position: relative;
+    top: 15px;
+}
 
 .head-btn {
     margin-right: 100px;
@@ -65,11 +78,16 @@ body {
     margin-right: 10px;
     background-color: #2c4da3;
     width: 200px;
+    transition:all 0.3s;
 }
-/*.home-btn:hover{
-    background-color:#2c4da3;
-    transition:0.5s ease;
-}*/
+
+header.sticky .home-btn{
+    width:150px;
+}
+.home-btn:hover{
+    box-shadow:0 0 5px 5px 5px black;
+    transition:0.2s ease;
+}
 .privacy-btn {
     border: none;
     border-radius: 5px;
@@ -78,18 +96,41 @@ body {
     background-color: orange;
     width: 200px;
 }
-/*.privacy-btn:hover {
-    background-color: orange;
-    transition: 0.5s ease;
-}*/
+header.sticky .privacy-btn{
+    width:150px;
+}
+
 .sticky-header {
-    position: sticky;
+    position: fixed;
     top: 0;
+    width: 100%;
+    left: 0;
     z-index: 1030; /* navbar ke upar rahe */
-    /*    background-color: white;*/
-    background: rgba(255, 255, 255, 0.2); /* thoda transparent white */
-    backdrop-filter: blur(10px);
-    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);
+    /*    background: rgba(255, 255, 255, 0.2); */
+    /*    background:linear-gradient(to bottom, rgba(23, 23, 23, 1) 0%,rgba(23,23,23,1) 0%);*/
+    /*    backdrop-filter: blur(10px);*/
+    /*    box-shadow: 0 8px 32px 0 rgba(31, 38, 135, 0.37);*/
+    background: linear-gradient(to bottom, rgba(23,23,23,1)0%, rgba(23,23,23,0) 100%);
+    border: none;
+    transition:all 0.3s;
+}
+header::before {
+    content: "";
+    width: 100%;
+    height: 100%;
+    background-color: transparent;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: background-color 0.3s;
+}
+
+header.sticky::before {
+    background: rgba(23, 23, 23, 0.8);
+}
+
+header.sticky .sticky-header {
+    background: rgba(23, 23, 23, 0.8);
 }
 
 .blur-card {
@@ -114,7 +155,6 @@ body {
 
         .blur-card input::placeholder,
         .blur-card select option {
-            /*    color: rgba(255, 255, 255, 0.8);  */
             color: black;
         }
 
@@ -155,21 +195,33 @@ body {
         color: #000;
     }
 
-/*img{
-    height:400px;
-    width:400px;
-}*/
-/*.blur-card-body {
-    background: rgba(255, 255, 255, 0.2);*/ /* transparent white */
-/*backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);*/ /* Safari support */
-/*border-bottom-left-radius: 0.5rem;
-    border-bottom-right-radius: 0.5rem;
-    padding: 1rem;
-    color: #000;
-}*/
+.search-btn {
+    justify-content: center;
+    width: 100px;
+}
+.search-btn .city-search{
+    transition:  0.2s;
+}
+    .search-btn .city-search button {
+        background-color: #2c4da3;
+        color:#fff;
+        font-weight:400;
+        border:none;
+        padding:7px 10px;
+    }
 
-/* Optional: dark text if background image is dark */
+header.sticky .search-btn .city-search {
+    width: 320px;
+}
+ .tollfree{
+    font-size:17.5px;
+    font-weight:500;
+}
+header.sticky .tollfree {
+    color: #fff;
+    font-size: 13px;
+}
+
 .card-title, .card-text {
     font-weight: bold;
 }
@@ -180,6 +232,7 @@ body {
     width: 100%;
     overflow: hidden;
     margin-bottom:100px;
+    margin-top:150px;
 }
 
 .carousel-item img {
@@ -206,10 +259,6 @@ body {
         text-shadow: 2px 2px 4px rgba(0,0,0,0.7);
     }
 
-.search-btn{
-    justify-content:center;
-    width:100px;
-}
 .highlight{
     transition: transform 0.3s ease;
 }
@@ -354,3 +403,10 @@ body {
         transition: 0.3s all ease-in-out;
         cursor: pointer;
     }
+
+.login-section{
+    margin-top:200px;
+}
+.register-section {
+    margin-top: 200px;
+}

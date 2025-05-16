@@ -13,12 +13,12 @@
 <!-- ✅ Flexbox applied here -->
 <body class="d-flex flex-column min-vh-100">
     <header class="sticky-header">
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light border-bottom box-shadow h-auto">
-            <div class="container-fluid d-flex flex-column justify-content-start align-items-end">
+        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light   h-auto">
+            <div class="container-fluid d-flex flex-column ">
 
                 <!-- Logo and toggler left aligned, nav items right -->
                 <div class="w-100 d-flex justify-content-between align-items-center">
-                    <a class="navbar-brand logo" asp-area="" asp-controller="Home" asp-action="Index">
+                    <a class="navbar-brand logo " asp-area="" asp-controller="Home" asp-action="Index">
                         <img src="~/img/images-removebg-preview.png" alt="HospitalManagementSystem_HMS_" />
                     </a>
                     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse"
@@ -41,12 +41,12 @@
                 </div>
                 <!-- 👇 Search + Toll-Free aligned to RIGHT -->
                 <div class="mt-2 text-end search-btn d-inline-flex w-100 justify-content-end">
-                    <div class=" mt-1 text-nowrap " style="margin-right:20px;">
+                    <div class=" mt-1 tollfree text-nowrap " style="margin-right:20px;">
                         <strong>Toll Free:</strong> 1800-123-4567
                     </div>
-                    <div class="input-group  align-items-center" style="max-width: 420px; margin-right:110px;">
+                    <div class="input-group city-search align-items-center" style="max-width: 420px; margin-right:110px;">
                         <input type="text" class="form-control " placeholder="Enter a city Name...." aria-label="Search">
-                        <button class="btn btn-outline-secondary " type="button">Search</button>
+                        <button class="btn " type="button">Search</button>
                     </div>
                 </div>
 
